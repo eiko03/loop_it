@@ -5,7 +5,7 @@ Create a empty DB as `loop_it` and then run
 ```shell
 cp .env.example .env && composer install && php artisan key:generate && php artisan jwt:secret && php artisan migrate
 ```
-> Change && if you are not using bash to something appropriate 
+> Change && if you are not using bash as shell to something appropriate 
 
 This will seed 5 random users and 51 cars
 You can log in by  
