@@ -16,7 +16,7 @@ class CarIndexRequest extends FormRequest
     public function rules()
     {
         return [
-            'count_per_page'=>'required|number',
+            'count_per_page'=>'required|numeric',
         ];
     }
 }

@@ -3,10 +3,10 @@
 
 
 use Illuminate\Support\Facades\Route;
-use Modules\Authentication\controllers\AuthController;
+use Modules\Car\Controllers\CarController;
 
 Route::group(['prefix' => 'car'], function () {
 
-    Route::post('/', [AuthController::class,'login']);
+    Route::get('/', [CarController::class,'index']);
 
 });
