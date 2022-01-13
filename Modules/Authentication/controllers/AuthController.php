@@ -1,13 +1,12 @@
 <?php
+namespace Modules\Authentication\controllers;
 
-namespace App\Http\Controllers;
-
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegisterRequest;
-use App\Http\Resources\UserResource;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
+use Modules\Authentication\requests\LoginRequest;
+use Modules\Authentication\requests\RegisterRequest;
+use Modules\Authentication\resources\UserResource;
+use Modules\Authentication\rules\CheckIfUserExistsRule;
 
 class AuthController extends Controller
 {
@@ -20,17 +19,24 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-//        return response()->json($request->email);
-        auth()->attempt((array)$request);
-//        if (! $token = auth()->attempt((array)$request))
-//            return response()->json(['error' => 'Unauthorized'], 401);
 
-//        return $this->respondWithToken($token);
+        $request->validate([
+            'email'=>new CheckIfUserExistsRule()
+        ]);
+
+        $token=auth()->attempt($request->all());
+        if (!$token)
+            return response()->json(['error' => 'Password Or Email Does Not Match'], 401);
+
+        return $this->respondWithToken($token);
     }
 
     public function register(RegisterRequest $request)
     {
-        User::create($request->toArray());
+        User::create(array_merge(
+            $request->toArray(),
+            ['password' => bcrypt($request->password)]
+        ));
         return response()->json(['message' => 'Successfully registered']);
     }
 
@@ -58,8 +64,7 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
+            'access_token' => 'bearer '.$token,
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
