@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
+    private array $module = ['Modules/','/Routes/routes.php'];
     protected $namespace = '';
 
     /**
@@ -38,10 +39,17 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+        $this->routes(function ()  {
+            Route::prefix('api')
+                ->middleware('api')
+                ->group(base_path($this->module[0].'Authentication'.$this->module[1]));
+
+        });
+
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
-                ->group(base_path('Modules/Authentication/Routes/routes.php'));
+                ->group(base_path($this->module[0].'Car'.$this->module[1]));
 
         });
     }
