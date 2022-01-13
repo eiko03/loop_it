@@ -31,3 +31,5 @@ php artisan db:seed
 - Every request is validated.
 - Api rate limited for DDOS protection.
 - Followed SOLID principle.
+
+you can find the API docs [**here**](https://documenter.getpostman.com/view/12387949/UVXjHadE)
