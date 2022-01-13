@@ -1,7 +1,8 @@
 <?php
-namespace Modules\Authentication\rules;
-use App\Models\User;
+namespace Modules\Authentication\Rules;
+
 use Illuminate\Contracts\Validation\Rule;
+use Modules\Authentication\Models\User;
 
 class CheckIfUserExistsRule implements Rule
 {

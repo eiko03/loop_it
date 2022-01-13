@@ -1,8 +1,9 @@
 <?php
-namespace Modules\Authentication\controllers;
+namespace Modules\Authentication\Controllers;
 
-use App\Models\User;
+
 use Illuminate\Routing\Controller;
+use Modules\Authentication\Models\User;
 use Modules\Authentication\requests\LoginRequest;
 use Modules\Authentication\requests\RegisterRequest;
 use Modules\Authentication\resources\UserResource;
