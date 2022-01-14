@@ -10,6 +10,11 @@ use Modules\Car\Requests\CarIndexRequest;
 
 class CarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     public function index(CarIndexRequest $request)
     {
 
