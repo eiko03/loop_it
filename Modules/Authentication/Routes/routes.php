@@ -1,5 +1,5 @@
 <?php
-
+namespace Modules\Authentication\Routes;
 
 
 use Illuminate\Support\Facades\Route;

@@ -1,5 +1,5 @@
 <?php
-
+namespace Modules\Car\Routes;
 
 
 use Illuminate\Support\Facades\Route;
