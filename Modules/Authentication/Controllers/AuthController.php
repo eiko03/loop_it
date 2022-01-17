@@ -4,10 +4,10 @@ namespace Modules\Authentication\Controllers;
 
 use Illuminate\Routing\Controller;
 use Modules\Authentication\Models\User;
-use Modules\Authentication\requests\LoginRequest;
-use Modules\Authentication\requests\RegisterRequest;
-use Modules\Authentication\resources\UserResource;
-use Modules\Authentication\rules\CheckIfUserExistsRule;
+use Modules\Authentication\Requests\LoginRequest;
+use Modules\Authentication\Requests\RegisterRequest;
+use Modules\Authentication\Resources\UserResource;
+use Modules\Authentication\Rules\CheckIfUserExistsRule;
 
 class AuthController extends Controller
 {

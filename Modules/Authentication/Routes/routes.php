@@ -3,7 +3,7 @@ namespace Modules\Authentication\Routes;
 
 
 use Illuminate\Support\Facades\Route;
-use Modules\Authentication\controllers\AuthController;
+use Modules\Authentication\Controllers\AuthController;
 
 Route::group(['prefix' => 'auth'], function () {
 
