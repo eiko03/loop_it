@@ -18,7 +18,7 @@ class AuthController extends Controller
     }
 
 
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): \Illuminate\Http\JsonResponse
     {
 
         $request->validate([
@@ -32,7 +32,7 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): \Illuminate\Http\JsonResponse
     {
         User::create(array_merge(
             $request->toArray(),
@@ -42,13 +42,13 @@ class AuthController extends Controller
     }
 
 
-    public function me()
+    public function me(): UserResource
     {
         return new UserResource(auth()->user());
     }
 
 
-    public function logout()
+    public function logout(): \Illuminate\Http\JsonResponse
     {
         auth()->logout();
 
@@ -56,7 +56,7 @@ class AuthController extends Controller
     }
 
 
-    public function refresh()
+    public function refresh(): \Illuminate\Http\JsonResponse
     {
         return $this->respondWithToken(auth()->refresh());
     }
