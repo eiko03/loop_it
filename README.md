@@ -39,4 +39,5 @@ php artisan artisan test
 - Followed SOLID principle.
 
 you can find the API docs [**here**](https://documenter.getpostman.com/view/12387949/UVXjHadE)
-**And please use PHP 8.1**
+<br /> 
+And please use **PHP 8.1**
