@@ -24,6 +24,12 @@ You can also generate more using
 php artisan db:seed
 ```
 
+Run test Cases Using
+
+```shell
+php artisan artisan test
+```
+
 ### Remarks
 - I have used JWT token for authentication.
 - I have torn down MVC given by laravel and built up HMVC. It's custom, didn't use any packages. 
@@ -33,3 +39,4 @@ php artisan db:seed
 - Followed SOLID principle.
 
 you can find the API docs [**here**](https://documenter.getpostman.com/view/12387949/UVXjHadE)
+**And please use PHP 8.1**
