@@ -29,6 +29,9 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
       
+    - name: Optimize Clear
+      run: php artisan optimize:clear
+      
     - name: Create Database
       run: |
         mkdir -p database
@@ -39,7 +42,7 @@ jobs:
         
     - name: Run Migration
       run: php artisan migrate --force
-      
+    
     - name: DB Seed
       run: php artisan db:seed
       
