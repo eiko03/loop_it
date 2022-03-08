@@ -35,8 +35,14 @@ jobs:
 
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
+      
     - name: PHP Syntax Checker (Lint)
       uses: StephaneBour/actions-php-lint@8.1
+      with:
+        dir: './'
+        
+    - name: PHP Copy Paste Detector
+      uses: StephaneBour/actions-php-cpd@1.0
       with:
         dir: './'
       
