@@ -35,6 +35,8 @@ jobs:
 
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
+    - name: PHP Syntax Checker (Lint)
+      uses: StephaneBour/actions-php-lint@8.1
+      with:
+        dir: './'
       
-    - name: PHP-Insights
-      uses: docker://tienvx/phpinsights-action
