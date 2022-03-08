@@ -35,3 +35,6 @@ jobs:
 
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
+
+    - name: Psalm
+      uses: docker://vimeo/psalm-github-actions
