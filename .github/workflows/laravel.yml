@@ -40,9 +40,6 @@ jobs:
       uses: StephaneBour/actions-php-lint@8.1
       with:
         dir: './'
-      
-    - name: PHP-stan
-      uses: zalexki/phpstan-action@0.1
 
 
       
