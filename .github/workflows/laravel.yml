@@ -46,4 +46,4 @@ jobs:
           files: "**.php"
           scan_all: true
           phpcs_path: php phpcs.phar
-          standard: phpcs.xml
+          standard: phpcs.xml --extensions=php 
