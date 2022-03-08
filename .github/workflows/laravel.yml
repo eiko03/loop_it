@@ -41,8 +41,6 @@ jobs:
       with:
         dir: './'
         
-    - name: PHP Copy Paste Detector
-      uses: StephaneBour/actions-php-cpd@1.0
-      with:
-        dir: './'
+    - name: Laravel Insight
+      uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       
